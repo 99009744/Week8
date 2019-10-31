@@ -3,15 +3,17 @@ alert("Hallo welkom bij The Krusty Krab!")
 var aantalFris = 0;
 var aantalBier = 0;
 var aantalWijn = 0;
-var aantalBitter = 0;
+var aantalbitterbal = 0;
+var aantalBitter8 = 0;
+var aantalBitter16 = 0;
 
 const FRISPRIJS = 1.80;
 const BIERPRIJS = 2.50;
 const WIJNPRIJS = 3.50;
-const BITTERPRIJS6 = 5.50;
-const BITTERPRIJS12 = 8.20;
+const BITTERPRIJS8 = 6.50;
+const BITTERPRIJS16 = 10;
 
-order();
+order ()
 function order() {
     var bestelling = prompt("welke beselling wilt u toevoegen? Fris, bier, wijn of snack");
     switch (bestelling) {           //switch werkt het zelfde als if/else maar makkelijker.
@@ -23,7 +25,7 @@ function order() {
             return;
         case "fris":
              aantalFris =+ parseInt(prompt("Hoeveel fris wilt u bestellen? prijs is €" + FRISPRIJS + "per glas")); //=+ telt me parseint bij me var op.
-            break;
+            break;                  //break zorgt vervoor dat je uit de switch gaat.
         case "bier":
              aantalBier =+ parseInt(prompt("Hoeveel bier wilt u bestellen? prijs is €" + BIERPRIJS + "per glas"));
             break;
@@ -31,7 +33,19 @@ function order() {
              aantalWijn =+ parseInt(prompt("Hoeveel wijn wilt u bestellen? prijs is €" + WIJNPRIJS + "per glas"));
             break;
         case "snack":
-            var bitterbal = parseInt(prompt("Hoeveel bitterballen wilt u 6 of 12? prijs voor 6= €"+ BITTERPRIJS6 +" prijs voor 12= €"+ BITTERPRIJS12))
+            aantalbitterbal = prompt("Hoeveel bitterballen wilt u? 8 of 16?");
+        if (aantalbitterbal ==8){
+            aantalBitter8 =+ parseInt(prompt("Hoeveel schalen van 8 bitterballen wilt u?"));
+            break;
+        }
+        if (aantalbitterbal ==16){
+            aantalBitter16 =+ parseInt(prompt("Hoeveel schalen van 16 bitterballen wilt u?"));
+            break;
+        }
+        else{
+            alert("Ongeldig aantal.");
+            break;
+        }
         default:
             alert("U heeft een ongeldige invoer gedaan.");
             break;
@@ -43,22 +57,32 @@ function order() {
 function createBill() {
     var totaalFris= aantalFris * FRISPRIJS;
     if (totaalFris > 0) {
-        var bill = "U heeft "+ aantalFris + "fris besteld opgetelt naar €" + totaalFris + "<br>";
+        document.write("U heeft "+ aantalFris + " fris besteld opgetelt naar €"+ totaalFris + "<br>");
     }
     
     var totaalBier= aantalBier * BIERPRIJS;
     if (totaalBier > 0) {
-        var bill =  "U heeft " + aantalBier + "bier besteld opgetelt naar €" + totaalBier + "<br>";
+        document.write("U heeft " + aantalBier + " bier besteld opgetelt naar €"+ totaalBier + "<br>");
     }
 
     var totaalWijn= aantalWijn * WIJNPRIJS;
     if (totaalWijn > 0) {
-        var bill = "U heeft " + aantalWijn +" wijn besteld opgetelt naar €" + totaalWijn + "<br>";
+        document.write ("U heeft " + aantalWijn +" wijn besteld opgetelt naar €"+ totaalWijn + "<br>");
     }
 
-    var totaalPrijs = totaalFris + totaalBier + totaalWijn;
+    var totaalbitterbal8= aantalBitter8 * BITTERPRIJS8;
+    if (totaalbitterbal8 > 0) {
+        document.write ("U heeft" + aantalBitter8 + " schalen met 8 bitterballen besteld opgetelt naar €"+ totaalbitterbal8 + "<br>");
+    }
+
+    var totaalbitterbal16= aantalBitter16 * BITTERPRIJS16;
+    if (totaalbitterbal16 > 0) {
+        document.write ("U heeft" + aantalBitter16 + " schalen met 16 bitterballen besteld opgetelt naar €"+ totaalbitterbal16 + "<br>");
+    }
+
+    var totaalPrijs = totaalFris + totaalBier + totaalWijn + totaalbitterbal8 + totaalbitterbal16;
     if (totaalPrijs > 0) {
-        var bill ="Dit komt neer op €" + totaalPrijs + "<br>";
+        document.write ("Dit komt neer op €" + totaalPrijs + "<br>");
 
         return bill;
     }
