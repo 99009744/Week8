@@ -21,7 +21,7 @@ function order() {
             var bill = createBill();
 
 
-            alert(bill);
+            document.write(bill);
             return;
         case "fris":
             var orderFris =+ parseInt(prompt("Hoeveel fris wilt u bestellen? prijs is €" + FRISPRIJS + "per glas")); //=+ telt me parseint bij me var op.
@@ -62,36 +62,36 @@ function order() {
 function createBill() {
     var totaalFris= aantalFris * FRISPRIJS;
     if (totaalFris > 0) {
-        document.write("U heeft "+ aantalFris + " fris besteld opgetelt naar €"+ totaalFris.toFixed(2) + "<br>");
+        document.write("Aantal fris besteld "+ aantalFris + "x €1.80 = €"+ totaalFris.toFixed(2) + "<br>");
     }
     
     var totaalBier= aantalBier * BIERPRIJS;
     if (totaalBier > 0) {
-        document.write("U heeft " + aantalBier + " bier besteld opgetelt naar €"+ totaalBier.toFixed(2) + "<br>");
+        document.write("Aantal bier besteld " + aantalBier + "x €2.50 = €"+ totaalBier.toFixed(2) + "<br>");
     }
 
     var totaalWijn= aantalWijn * WIJNPRIJS;
     if (totaalWijn > 0) {
-        document.write ("U heeft " + aantalWijn +" wijn besteld opgetelt naar €"+ totaalWijn.toFixed(2) + "<br>");
+        document.write ("Aantal wijn besteld " + aantalWijn +"x €3.50 = €"+ totaalWijn.toFixed(2) + "<br>");
     }
 
     var totaalbitterbal8= aantalBitter8 * BITTERPRIJS8;
     if (totaalbitterbal8 > 0) {
-        document.write ("U heeft " + aantalBitter8 + " schalen met 8 bitterballen besteld opgetelt naar €"+ totaalbitterbal8.toFixed(2) + "<br>");
+        document.write ("Aantal schalen van 8 bitterballen besteld " + aantalBitter8 + "x €6.50 = €"+ totaalbitterbal8.toFixed(2) + "<br>");
     }
 
     var totaalbitterbal16= aantalBitter16 * BITTERPRIJS16;
     if (totaalbitterbal16 > 0) {
-        document.write ("U heeft " + aantalBitter16 + " schalen met 16 bitterballen besteld opgetelt naar €"+ totaalbitterbal16.toFixed(2) + "<br>");
+        document.write ("Aantal schalen van 16 bitterballen besteld " + aantalBitter16 + "x €10 = €"+ totaalbitterbal16.toFixed(2) + "<br>");
     }
 
     var totaalPrijs = totaalFris + totaalBier + totaalWijn + totaalbitterbal8 + totaalbitterbal16;
     if (totaalPrijs > 0) {
-        document.write ("Dit komt neer op €" + totaalPrijs.toFixed(2) + "<br>");
+        document.write ("<br><br>Dit komt neer op een totaal bedrag van €" + totaalPrijs.toFixed(2) + "<br>");
 
         return bill;
     }
     
-    return "geen bestelling";
+    return "U heeft geen bestelling gedaan hier een nutteloos bonnetje";
 }
 createBill();

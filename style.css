@@ -1,12 +1,33 @@
 body{
-    background-color: aquamarine;
+    background-image: url("achtergrond.jpg");
+    background-size: cover;
 }
 .Opdracht8{
+    display: grid;
     background-image: url("bon.png");
     font-family: 'Pacifico', cursive;
     text-align: center;
-    font-size: 38px;
+    font-size: 32px;
     margin: 0 auto;
     width: 620px;
     height: 1092px;
+    grid-template-columns: 5px 10px 600px 10px;
+    grid-template-rows: 20px 100px 20px 1002px;
+}
+h1{
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 42px;
+    grid-row: 2/3;
+    grid-column: 3/4;
+}
+.script{
+    grid-row: 3/4;
+    grid-column: 3/4;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    grid-row: 2/3;
+    grid-column: 2/3;
 }
