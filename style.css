@@ -1,0 +1,12 @@
+body{
+    background-color: aquamarine;
+}
+.Opdracht8{
+    background-image: url("bon.png");
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 38px;
+    margin: 0 auto;
+    width: 620px;
+    height: 1092px;
+}

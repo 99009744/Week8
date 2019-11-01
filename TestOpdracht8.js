@@ -62,32 +62,32 @@ function order() {
 function createBill() {
     var totaalFris= aantalFris * FRISPRIJS;
     if (totaalFris > 0) {
-        document.write("U heeft "+ aantalFris + " fris besteld opgetelt naar €"+ totaalFris.toFixed(2) + "<br>");
+        document.write("U heeft "+ aantalFris + " fris besteld opgetelt naar €"+ totaalFris + "<br>");
     }
     
     var totaalBier= aantalBier * BIERPRIJS;
     if (totaalBier > 0) {
-        document.write("U heeft " + aantalBier + " bier besteld opgetelt naar €"+ totaalBier.toFixed(2) + "<br>");
+        document.write("U heeft " + aantalBier + " bier besteld opgetelt naar €"+ totaalBier + "<br>");
     }
 
     var totaalWijn= aantalWijn * WIJNPRIJS;
     if (totaalWijn > 0) {
-        document.write ("U heeft " + aantalWijn +" wijn besteld opgetelt naar €"+ totaalWijn.toFixed(2) + "<br>");
+        document.write ("U heeft " + aantalWijn +" wijn besteld opgetelt naar €"+ totaalWijn + "<br>");
     }
 
     var totaalbitterbal8= aantalBitter8 * BITTERPRIJS8;
     if (totaalbitterbal8 > 0) {
-        document.write ("U heeft " + aantalBitter8 + " schalen met 8 bitterballen besteld opgetelt naar €"+ totaalbitterbal8.toFixed(2) + "<br>");
+        document.write ("U heeft " + aantalBitter8 + " schalen met 8 bitterballen besteld opgetelt naar €"+ totaalbitterbal8 + "<br>");
     }
 
     var totaalbitterbal16= aantalBitter16 * BITTERPRIJS16;
     if (totaalbitterbal16 > 0) {
-        document.write ("U heeft " + aantalBitter16 + " schalen met 16 bitterballen besteld opgetelt naar €"+ totaalbitterbal16.toFixed(2) + "<br>");
+        document.write ("U heeft " + aantalBitter16 + " schalen met 16 bitterballen besteld opgetelt naar €"+ totaalbitterbal16 + "<br>");
     }
 
     var totaalPrijs = totaalFris + totaalBier + totaalWijn + totaalbitterbal8 + totaalbitterbal16;
     if (totaalPrijs > 0) {
-        document.write ("Dit komt neer op €" + totaalPrijs.toFixed(2) + "<br>");
+        document.write ("Dit komt neer op €" + totaalPrijs + "<br>");
 
         return bill;
     }
